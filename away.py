@@ -37,9 +37,15 @@ def restore_and_quit(*args):
 
 if __name__ == '__main__':
     window = gtk.Window()
-    vbox = gtk.VBox()
-    label = gtk.Label("Away: the screen will turn off in a minute.")
-    button = gtk.Button("I'm back.")
+    window.set_border_width(15)
+    window.set_title("I'm Away")
+    window.set_position(gtk.WIN_POS_CENTER)
+    window.set_keep_above(True)
+
+    vbox = gtk.VBox(True, 10)
+    label = gtk.Label("The screen will turn off in a minute.")
+    button = gtk.Button("I'm _back")
+    button.set_size_request(-1, 40) # change the height, keep the width
 
     window.add(vbox)
     vbox.add(label)
