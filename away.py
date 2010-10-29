@@ -1,4 +1,7 @@
 import gconf
+import pygtk
+pygtk.require('2.0')
+import gtk
 
 AWAY_SETTINGS = {
     "/apps/gnome-power-manager/timeout/sleep_display_ac": 60,
@@ -27,14 +30,24 @@ def restore_original_settings():
     for key, value in ORIGINAL_SETTINGS.items():
         set(key, value)
 
+def restore_and_quit(*args):
+    restore_original_settings()
+    gtk.main_quit()
 
 
 if __name__ == '__main__':
-    try:
-        save_original_settings()
-        set_away_mode()
-        while True:
-            pass
-    except:
-        restore_original_settings()
-        print("Original settings restored.")
+    window = gtk.Window()
+    vbox = gtk.VBox()
+    label = gtk.Label("Away: the screen will turn off in a minute.")
+    button = gtk.Button("I'm back.")
+
+    window.add(vbox)
+    vbox.add(label)
+    vbox.add(button)
+    window.connect("delete-event", restore_and_quit)
+    button.connect("clicked", restore_and_quit)
+
+    save_original_settings()
+    set_away_mode()
+    window.show_all()
+    gtk.main()

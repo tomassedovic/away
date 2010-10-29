@@ -1,0 +1,22 @@
+I'm Away
+========
+
+Are you stepping away from you computer but need to run it anyway? Are you
+concerned about the power consumption? Are you bothered by turning all the
+monitors off manually?
+
+We have a solution!
+
+You run the I'm Away tool and all your displays will automaticaly turn off a
+minute later. If something wakes them up while you're away, they'll get turned
+off again.
+
+Once you get back, you press the "I'm back" button and you're done! Your power
+settings will get restored to the way they were before you started the app.
+
+
+Requirements
+------------
+
+* Python2
+* PyGTK
