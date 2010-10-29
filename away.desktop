@@ -1,0 +1,8 @@
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=/usr/bin/env python2 $PREFIX/away.py
+Name=I'm Away
+Icon=gnome-term-night
