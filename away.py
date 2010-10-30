@@ -1,3 +1,5 @@
+# This program is free software: see the README and COPYING files.
+
 import gconf
 import pygtk
 pygtk.require('2.0')
