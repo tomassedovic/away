@@ -17,6 +17,27 @@ settings will get restored to the way they were before you started the app.
 
 Requirements
 ------------
-
 * Python2
 * PyGTK
+
+
+Installation
+------------
+Put the `away.py` file to the directory for the installed apps (probably
+/usr/bin/).
+
+    $ sudo cp ~/code/away/away.py /usr/bin/
+
+Put the `away.desktop` file to the directory for the apps' shortcuts (probably
+/usr/share/applications/).
+
+    $ sudo cp ~/code/away/away.desktop /usr/share/applications/
+
+Edit the `away.desktop` file and replace the `$PREFIX` part in the `Exec`
+field with the path to the `away.py` file (probably `/usr/bin/away.py`).
+
+    $ sudo sed -e "s/\$PREFIX/\/usr\/bin/" --in-place /usr/share/applications/away.desktop
+
+Make sure you have the `python2` executable working. If not, replace the
+"python2" part in the `away.desktop` file with whatever is your Python 2
+executable.
