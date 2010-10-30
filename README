@@ -41,3 +41,11 @@ field with the path to the `away.py` file (probably `/usr/bin/away.py`).
 Make sure you have the `python2` executable working. If not, replace the
 "python2" part in the `away.desktop` file with whatever is your Python 2
 executable.
+
+
+Roadmap
+-------
+* automate the installation
+* dim the window surroundings when the app is running
+    - this will make it stand out. It'll save users from forgetting to close
+      the program and then be annoyed when the display turns off.
